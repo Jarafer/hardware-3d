@@ -1,0 +1,85 @@
+.micro-chapter {
+  background: #faf1df;
+  border: 1px solid #b9a079;
+  margin: 0 0 42px;
+  box-shadow: 0 5px 0 #c6a47755, 0 6px 0 #b9a079;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.micro-chapter:not([hidden]) ~ .bottom-strip { display: none; }
+.micro-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(18px, 3vw, 38px);
+  border-bottom: 1px solid #c6a477;
+}
+.micro-heading h2 { margin: 5px 0 0; font: clamp(30px, 4vw, 42px) Georgia, serif; }
+.micro-chapter button {
+  min-height: 42px;
+  padding: 8px 13px;
+  border: 1px solid #356675;
+  border-radius: 3px;
+  background: #fff9ea;
+}
+.micro-chapter button[aria-pressed="true"], .micro-activity button {
+  color: #fff9ea;
+  background: #356675;
+}
+.micro-chapter button[aria-pressed="true"]:hover, .micro-activity button:hover { background: #28525f; }
+.micro-spread { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.micro-page { min-width: 0; padding: clamp(18px, 3vw, 38px); }
+.micro-page + .micro-page {
+  background: linear-gradient(90deg, #d9c7a470, transparent 18px), #f6ebd4;
+  border-left: 1px solid #c6a477;
+}
+.micro-page h3 { margin: 7px 0 15px; font: 27px Georgia, serif; }
+.micro-figure { margin: 0; }
+.micro-photo { position: relative; max-width: 524px; outline: 1px solid #b9a079; background: white; }
+.micro-photo img { display: block; width: 100%; height: auto; }
+.micro-outline {
+  position: absolute;
+  border: 3px solid #f0b757;
+  outline: 1px solid #303945;
+  box-shadow: 0 0 0 2px #fff9eac0;
+  border-radius: 3px;
+  pointer-events: none;
+}
+.micro-figure figcaption { margin-top: 9px; color: #525e60; font-size: 13px; }
+.micro-references { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.micro-reference-detail, .micro-caution {
+  padding: 8px 12px;
+  border-left: 3px solid #356675;
+  background: #fff9ea;
+}
+.micro-reference-detail { min-height: 4em; }
+.micro-notes dt { font-weight: 700; margin-top: 12px; }
+.micro-notes dd { margin: 2px 0 0; }
+.micro-activity { margin-top: 20px; padding-top: 15px; border-top: 1px solid #c6a477; }
+.micro-activity fieldset { padding: 0; margin: 0 0 12px; border: 0; min-inline-size: 0; }
+.micro-activity legend { font: 21px Georgia, serif; }
+.micro-activity p { margin: 8px 0; }
+.micro-activity label {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+.micro-activity input { flex: none; accent-color: #356675; }
+.micro-feedback:not(:empty) { padding: 8px 12px; background: #eaf0e5; border-left: 3px solid #356650; }
+.micro-caution { border-color: #b08039; font-size: 13px; }
+.micro-sources { padding: 14px clamp(18px, 3vw, 38px); border-top: 1px solid #c6a477; font-size: 13px; }
+.micro-sources summary { cursor: pointer; }
+.micro-resources .micro-media-image { display: block; width: 100%; height: auto; border: 1px solid #b9a079; }
+.micro-resources .micro-media-host iframe { display: block; width: 100%; border: 1px solid #b9a079; }
+.micro-resources .micro-media-video iframe { aspect-ratio: 16 / 9; min-height: 200px; background: #303945; }
+.micro-resources .micro-media-pdf iframe { height: min(70vh, 700px); min-height: 350px; }
+#micro-image-full { display: block; max-width: none; height: auto; }
+#micro-image-zoom { max-width: 100%; accent-color: #356675; }
+@media (max-width: 760px) {
+  .micro-spread { grid-template-columns: minmax(0, 1fr); }
+  .micro-page + .micro-page { border-left: 0; border-top: 1px solid #c6a477; background: #f6ebd4; }
+}

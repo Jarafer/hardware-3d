@@ -1,0 +1,60 @@
+:is(.flex-chapter, .keyboard-chapter) .flex-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 14px;
+}
+
+:is(.flex-chapter, .keyboard-chapter) .flex-controls [aria-pressed="true"] {
+  color: #fff9ea;
+  background: #315f6d;
+}
+
+.flex-guide {
+  margin: 0;
+}
+
+.flex-guide-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #a88c62;
+}
+
+.flex-guide-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flex-guide-marker {
+  position: absolute;
+  border: 2px solid #173a48;
+  border-radius: 4px;
+  outline: 2px solid #fff;
+  pointer-events: none;
+}
+
+.flex-guide figcaption {
+  padding: 10px 12px;
+  background: #fff9ea;
+}
+
+.flex-guide figcaption p {
+  margin: 4px 0 0;
+}
+
+.flex-reflection {
+  display: block;
+  margin-block: 16px 6px;
+}
+
+#flex-justification,
+#keyboard-justification {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #a88c62;
+  background: #fff9ea;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}

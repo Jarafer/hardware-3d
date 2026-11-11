@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F0E5CE" />
+    <meta name="description" content="Laboratorio educativo de mantenimiento preventivo y diagnóstico de netbooks para quinto año." />
+    <title>Hardware 3D — Laboratorio Interactivo</title>
+  </head>
+  <body>
+    <section id="institution-cover" class="institution-cover" aria-labelledby="cover-title">
+      <div class="cover-sheet">
+        <header class="cover-institutions">
+          <div class="cover-school"><img src="./instituciones/escuela-796.png" alt="Escudo de la Escuela Provincial N° 796 Antonio Berni" width="258" height="247" /><div><span class="cover-kicker">ESCUELA DE RESIDENCIA</span><p>Escuela Provincial N° 796<br /><strong>“Antonio Berni”</strong></p></div></div>
+          <div class="cover-profesorado"><img src="./instituciones/consudec.png" alt="CONSUDEC Profesorado" width="300" height="92" /></div>
+        </header>
+        <div class="cover-body">
+          <div class="cover-introduction">
+            <p class="cover-kicker">TALLER DE HARDWARE · RECURSO EDUCATIVO INTERACTIVO</p>
+            <h1 id="cover-title" tabindex="-1">Hardware <span>3D</span></h1>
+            <p class="cover-subtitle">Laboratorio Interactivo</p>
+            <p class="cover-description">Un libro para explorar los componentes de una netbook, comprender su funcionamiento y aprender a cuidarlos.</p>
+            <button id="enter-laboratory" class="cover-enter" type="button" disabled>Entrar al laboratorio <span aria-hidden="true">↗</span></button>
+            <p class="cover-invitation">Tu recorrido empieza al abrir el libro.</p>
+          </div>
+          <div class="cover-illustration" aria-hidden="true">
+            <span class="cover-coordinate">FIG. 01 / EXPLORAR PARA COMPRENDER</span>
+            <div class="cover-drawn-book"><span class="cover-book-number">CUADERNO DE LABORATORIO / 2026</span><strong>Hardware<br /><em>3D</em></strong><svg viewBox="0 0 240 160" fill="none"><g stroke="currentColor" stroke-width="1.5"><rect x="75" y="30" width="90" height="80" rx="4"/><rect x="88" y="43" width="64" height="54" rx="2"/><path d="M90 30V12m20 18V12m20 18V12m20 18V12M90 110v18m20-18v18m20-18v18m20-18v18M75 45H48V25H23m52 40H23m52 20H45v39H23m142-79h28V25h24m-52 40h52m-52 20h28v39h24"/><circle cx="23" cy="25" r="4"/><circle cx="23" cy="65" r="4"/><circle cx="23" cy="124" r="4"/><circle cx="217" cy="25" r="4"/><circle cx="217" cy="65" r="4"/><circle cx="217" cy="124" r="4"/></g><text x="120" y="78" text-anchor="middle" fill="currentColor" font-size="22" font-family="monospace">RAM</text></svg><span class="cover-book-motto">OBSERVAR · EXPLORAR · APRENDER</span></div>
+            <span class="cover-coordinate cover-coordinate-bottom">PAPEL, IDEAS Y TECNOLOGÍA</span>
+          </div>
+        </div>
+        <footer class="cover-credits"><div><span class="cover-kicker">RESIDENTE</span><strong>Jaramillo Guillermo Fernando</strong></div><div><span class="cover-kicker">DOCENTE</span><strong>Vazquez Cecilia</strong></div><div><span class="cover-kicker">CICLO LECTIVO</span><strong>2026</strong></div></footer>
+      </div>
+    </section>
+    <div id="laboratory-app" hidden>
+    <a class="skip-link" href="#laboratorio">Saltar al laboratorio</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Hardware 3D, inicio"><span class="brand-mark" aria-hidden="true">H<span>3D</span></span><span>HARDWARE 3D<small>LABORATORIO INTERACTIVO</small></span></a>
+      <div class="header-right"><button class="help-button" id="return-cover" type="button">Portada</button><span class="course">Taller de Hardware 5° año</span><button class="help-button" id="open-help" type="button">Guía de uso <span aria-hidden="true">↗</span></button></div>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <p class="eyebrow"><span></span> UN ESPACIO PARA EXPLORAR Y COMPRENDER</p>
+        <h1 id="title">El hardware, <em>desde adentro.</em></h1>
+        <p>Observá, explorá y aprendé a cuidar una netbook. Tu mesa de trabajo empieza acá.</p>
+      </section>
+      <nav id="chapter-tabs" class="chapter-tabs" role="tablist" aria-label="Capítulos del laboratorio"><button id="tab-exploration" type="button" role="tab" aria-selected="true" aria-controls="exploration-chapter">Exploración 3D <span>Libro, netbook y componentes</span></button><button id="tab-safety" type="button" role="tab" aria-selected="false" aria-controls="safety-chapter" tabindex="-1">Seguridad y mantenimiento <span>Antes de abrir una netbook</span></button><button id="tab-diagnostic" type="button" role="tab" aria-selected="false" aria-controls="diagnostic-chapter" tabindex="-1">Detectives del Hardware <span>Un desafío con evidencias</span></button></nav>
+      <div id="exploration-chapter" role="tabpanel" aria-labelledby="tab-exploration">
+      <details id="book-index" class="book-index" open><summary id="book-index-title" tabindex="-1">Índice del libro</summary><p>Elegí una página para comenzar. Los capítulos disponibles conservan su recorrido; los próximos están señalados.</p><ol id="book-index-list" aria-label="Páginas y capítulos del libro"></ol></details>
+      <section id="micro-chapter" class="micro-chapter" aria-labelledby="micro-title" hidden>
+        <header class="micro-heading">
+          <div><span class="eyebrow">CUADERNO DE EXPLORACIÓN · MICROPROCESADOR</span><h2 id="micro-title" tabindex="-1">El microprocesador</h2></div>
+          <button id="micro-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="micro-spread">
+          <article class="micro-page">
+            <span class="eyebrow">PÁGINA 05 · RECONOCER</span>
+            <h3>Ubicalo en la placa</h3>
+            <figure class="micro-figure">
+              <div class="micro-photo">
+                <img id="micro-image" width="524" height="446" alt="Placa de una netbook vista desde arriba. El procesador es el cuadrado oscuro cerca del centro, con un rectángulo brillante en su interior." />
+                <span id="micro-outline" class="micro-outline" aria-hidden="true"></span>
+              </div>
+              <figcaption>Foto aportada para el capítulo · Procesador visible con el disipador fuera de la imagen.</figcaption>
+            </figure>
+            <div id="micro-references" class="micro-references" role="group" aria-label="Referencias de la fotografía"></div>
+            <p id="micro-reference-detail" class="micro-reference-detail" role="status"></p>
+          </article>
+          <article class="micro-page">
+            <span class="eyebrow">PÁGINA 06 · INTERPRETAR</span>
+            <h3>¿Qué hace la CPU?</h3>
+            <p id="micro-introduction"></p>
+            <dl id="micro-notes" class="micro-notes"></dl>
+            <form id="micro-activity" class="micro-activity">
+              <fieldset><legend>Indagación breve</legend><p id="micro-question"></p><div id="micro-choices"></div></fieldset>
+              <button type="submit">Comprobar respuesta</button>
+              <p id="micro-feedback" class="micro-feedback" role="status"></p>
+            </form>
+            <p>Para identificar el procesador exacto de la foto y su tipo de montaje, consultá la documentación del equipo.</p>
+            <p class="micro-caution">Para intervenir en un equipo real, consultá el manual del modelo y trabajá con supervisión docente.</p>
+          </article>
+        </div>
+        
+        <section class="ram-resources micro-resources" aria-labelledby="micro-resources-title">
+          <span class="eyebrow">ANEXOS DEL CAPÍTULO · ELEGÍ CÓMO EXPLORAR</span>
+          <h3 id="micro-resources-title">El microprocesador en distintos medios</h3>
+          <p>Podés elegir un video, ampliar las infografías, recorrer el PDF o leer las ideas clave en texto. Son recursos opcionales.</p>
+          <div id="micro-resource-list"></div>
+          <dialog id="micro-image-dialog" class="ram-image-dialog" aria-labelledby="micro-image-dialog-title">
+            <h3 id="micro-image-dialog-title">Infografía ampliada</h3>
+            <p>Usá el control de ampliación y desplazate por la imagen. Escape cierra la vista.</p>
+            <div class="ram-media-actions">
+              <label for="micro-image-zoom">Ampliación</label>
+              <input id="micro-image-zoom" type="range" min="100" max="400" step="25" value="100" />
+              <output id="micro-image-zoom-value" for="micro-image-zoom">100 %</output>
+              <button id="micro-image-close" type="button" autofocus>Cerrar infografía</button>
+            </div>
+            <div class="ram-image-scroll" role="region" aria-label="Imagen ampliada con desplazamiento" tabindex="0"><img id="micro-image-full" alt="" /></div>
+          </dialog>
+        </section>
+      </section>
+      <section id="motherboard-chapter" class="motherboard-chapter" aria-labelledby="motherboard-title" hidden>
+        <header class="motherboard-heading">
+          <div><span class="eyebrow">CUADERNO DE EXPLORACIÓN · MOTHERBOARD</span><h2 id="motherboard-title" tabindex="-1">La motherboard</h2></div>
+          <button id="motherboard-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="motherboard-spread">
+          <article class="motherboard-page">
+            <span class="eyebrow">PÁGINA 07 · OBSERVAR</span>
+            <h3>Explorá las dos caras</h3>
+            <div class="motherboard-viewport">
+              <canvas id="motherboard-scene" tabindex="0" aria-label="Modelo 3D de la placa madre de una netbook" aria-describedby="motherboard-view-help"></canvas>
+              <span id="motherboard-face" class="motherboard-face" role="status" hidden></span>
+            </div>
+            <p id="motherboard-status" class="motherboard-status" role="status"></p>
+            <p id="motherboard-view-help" class="motherboard-hint">Arrastrá para girar y usá la rueda o el gesto de pinza para acercar. Con el visor enfocado, usá las flechas y las teclas + o −.</p>
+            <fieldset id="motherboard-controls" class="motherboard-controls" disabled>
+              <legend>Controles del modelo</legend>
+              <button type="button" data-view="front">Cara superior</button>
+              <button type="button" data-view="rear">Cara posterior</button>
+              <button type="button" data-view="initial">Vista inicial</button>
+              <button type="button" data-zoom="0.85">Acercar</button>
+              <button type="button" data-zoom="1.17647">Alejar</button>
+            </fieldset>
+            <p class="motherboard-hint">Modelo didáctico realizado con las dos fotos. El grosor, el relieve y la alineación son aproximados.</p>
+            <details id="motherboard-photos">
+              <summary>Ver las dos fotos originales</summary>
+              <div class="motherboard-photos">
+                <figure><img id="motherboard-photo-front" width="510" height="406" alt="Cara superior con el procesador cerca del centro, la ranura de RAM debajo y los puertos en el borde derecho." /><figcaption>Cara superior</figcaption></figure>
+                <figure><img id="motherboard-photo-rear" width="528" height="677" alt="Cara posterior con pistas, chips pequeños y la hilera de puertos en el borde de arriba de la foto." /><figcaption>Cara posterior · Orientación original</figcaption></figure>
+              </div>
+            </details>
+          </article>
+          <article class="motherboard-page">
+            <span class="eyebrow">PÁGINA 08 · INTERPRETAR</span>
+            <h3>¿Qué hace la placa madre?</h3>
+            <p id="motherboard-introduction"></p>
+            <dl id="motherboard-functions" class="motherboard-functions"></dl>
+            <h4>Qué reconocer en una netbook</h4>
+            <p id="motherboard-netbook"></p>
+            <p id="motherboard-variations"></p>
+            <h4>Cómo seguir las conexiones</h4>
+            <dl id="motherboard-details" class="motherboard-functions"></dl>
+            <aside class="motherboard-note"><h4>Cuidados de taller</h4><p id="motherboard-care"></p></aside>
+          </article>
+        </div>
+        <section class="motherboard-assessment" aria-labelledby="motherboard-assessment-title">
+          <span class="eyebrow">PÁGINA 09 · APLICAR</span>
+          <h3 id="motherboard-assessment-title">Actividad evaluativa</h3>
+          <p>Observá las dos caras en el modelo 3D o en las fotos originales. Elegí una respuesta por pregunta y comprobá el resultado para recibir una devolución.</p>
+          <form id="motherboard-assessment">
+            <div id="motherboard-questions" class="motherboard-questions"></div>
+            <div class="motherboard-assessment-actions">
+              <button class="motherboard-check" type="submit">Comprobar respuestas</button>
+              <button type="reset">Reiniciar actividad</button>
+            </div>
+            <p id="motherboard-result" class="motherboard-result" tabindex="-1" hidden></p>
+          </form>
+        </section>
+      </section>
+      <section id="storage-chapter" class="motherboard-chapter storage-chapter" aria-labelledby="storage-title" hidden>
+        <header class="motherboard-heading">
+          <h2 id="storage-title" tabindex="-1">Disco rígido y almacenamiento</h2>
+          <button id="storage-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="motherboard-spread">
+          <article class="motherboard-page">
+            <span class="eyebrow">PÁGINA 10 · OBSERVAR</span>
+            <h3>Compará las tres imágenes</h3>
+            <div id="storage-device-controls" class="storage-device-controls" role="group" aria-label="Tipo de almacenamiento"></div>
+            <p id="storage-selection" class="storage-announcement" role="status"></p>
+            <figure id="storage-device" class="storage-device" aria-labelledby="storage-device-name">
+              <img id="storage-photo" alt="" decoding="async" />
+              <figcaption><strong id="storage-device-name"></strong><p id="storage-observation"></p></figcaption>
+            </figure>
+            <dl class="motherboard-functions">
+              <dt>Cómo guarda datos</dt><dd id="storage-technology"></dd>
+              <dt>Cómo se conecta</dt><dd id="storage-connection"></dd>
+              <dt>Qué falta confirmar</dt><dd id="storage-check"></dd>
+            </dl>
+          </article>
+          <article class="motherboard-page">
+            <span class="eyebrow">PÁGINA 11 · INTERPRETAR</span>
+            <h3>¿Dónde quedan los archivos?</h3>
+            <p>El almacenamiento conserva el sistema, los programas y los archivos guardados cuando apagás la netbook. La RAM mantiene los datos con los que está trabajando en ese momento.</p>
+            <h4>Tecnología, formato e interfaz</h4>
+            <dl class="motherboard-functions">
+              <dt>Tecnología</dt><dd>Describe cómo se guardan los datos. Un HDD usa grabación magnética. Un SSD y una eMMC usan memoria flash.</dd>
+              <dt>Formato</dt><dd>Describe la forma y las dimensiones. Algunos ejemplos son una unidad de 2,5 pulgadas, un módulo M.2 o un chip soldado.</dd>
+              <dt>Interfaz</dt><dd>Describe cómo se comunica con el equipo. Dos módulos M.2 pueden tener el mismo tamaño y requerir interfaces distintas.</dd>
+            </dl>
+            <aside class="motherboard-note">
+              <h4>Cuidá la unidad y los datos</h4>
+              <p>Evitá golpes, especialmente con un HDD en uso. Hacé copias en otro medio. Si aparece una alerta S.M.A.R.T., registrala y priorizá el respaldo con el docente.</p>
+            </aside>
+            <p>El mantenimiento depende del tipo de unidad y del sistema operativo. Por ejemplo, Windows distingue la desfragmentación de un HDD de la optimización de un SSD con TRIM cuando es compatible. Para intervenir físicamente, consultá el manual del modelo y trabajá con supervisión docente.</p>
+          </article>
+        </div>
+        <section class="motherboard-assessment" aria-labelledby="storage-assessment-title">
+          <span class="eyebrow">PÁGINA 12 · INDAGAR</span>
+          <h3 id="storage-assessment-title">¿Qué investigarías antes de cambiar la unidad?</h3>
+          <div class="storage-case">
+            <h4>Caso simulado</h4>
+            <p>Una netbook arranca lento. El inventario indica un SSD M.2 2280 SATA de 120 GB con 6 GB libres. El manual del equipo indica que su ranura admite solo M.2 2280 SATA.</p>
+          </div>
+          <form id="storage-assessment">
+            <div id="storage-questions" class="motherboard-questions"></div>
+            <label class="storage-reflection" for="storage-justification">
+              <strong>Para conversar en clase</strong>
+              Escribí una observación del caso, una hipótesis y qué dato buscarías para comprobarla. Tu explicación se revisa en clase y las cuatro preguntas de selección tienen devolución automática.
+            </label>
+            <textarea id="storage-justification" rows="3"></textarea>
+            <div class="motherboard-assessment-actions">
+              <button class="motherboard-check" type="submit">Comprobar respuestas</button>
+              <button type="reset">Reiniciar actividad</button>
+            </div>
+            <p id="storage-result" class="motherboard-result" tabindex="-1" hidden></p>
+          </form>
+        </section>
+        <section class="ram-resources storage-resources" aria-labelledby="storage-resources-title">
+          <h3 id="storage-resources-title">Almacenamiento en distintos medios</h3>
+          <p>Podés elegir el video, ampliar la infografía o recorrer las ideas en texto.</p>
+          <details id="storage-video-panel" class="ram-resource-panel">
+            <summary>Video sobre HDD y SSD</summary>
+            <p><cite>Lo que no te dicen de los SSD | HDD VS SDD</cite> · Glitch hardware</p>
+            <p>El reproductor de YouTube requiere Internet y se carga a pedido.</p>
+            <div class="ram-media-actions">
+              <button type="button" id="storage-video-load">Cargar reproductor</button>
+              <button type="button" id="storage-video-close" hidden>Cerrar reproductor</button>
+              <a href="https://www.youtube.com/watch?v=SDakFCrcNj8" target="_blank" rel="noreferrer">Ver en YouTube (nueva pestaña)</a>
+            </div>
+            <div id="storage-video-host"></div>
+            <details class="ram-text-alternative">
+              <summary>Lectura de apoyo sobre HDD y SSD</summary>
+              <p>Un HDD mueve un cabezal para acceder a los platos. Un SSD accede a celdas de memoria flash y suele responder más rápido al abrir programas o al leer muchos archivos pequeños. Ambos conservan archivos con la netbook apagada.</p>
+              <p>Para indagar, ¿qué medición te ayudaría a comparar el tiempo de arranque de dos unidades? ¿Qué condiciones mantendrías iguales para que la comparación sea justa?</p>
+            </details>
+          </details>
+          <details id="storage-guide-panel" class="ram-resource-panel">
+            <summary>Infografía de almacenamiento en netbooks</summary>
+            <aside class="ram-media-note">
+              <p><strong>Aclaraciones para leer la guía</strong></p>
+              <ul>
+                <li>Las generaciones y capacidades ilustradas son ejemplos. Confirmá el tipo de unidad con la etiqueta o la ficha del equipo.</li>
+                <li>Fragmentación, corrupción de archivos y daño físico son situaciones distintas. La desfragmentación tradicional se usa en HDD cuando corresponde. Para SSD, seguí la optimización que indique el sistema operativo.</li>
+                <li>Separar datos y sistema en particiones ayuda a organizarlos. Para proteger archivos ante una falla de la unidad, guardá una copia en otro medio.</li>
+              </ul>
+            </aside>
+            <figure>
+              <img id="storage-guide-image" width="2752" height="1536" decoding="async" alt="Guía ilustrada de seis paneles sobre almacenamiento no volátil, HDD, SSD y eMMC, golpes, ventilación y problemas de lectura. La descripción en texto desarrolla cada tema." />
+              <figcaption>Guía visual aportada para el capítulo.</figcaption>
+            </figure>
+            <div class="ram-media-actions">
+              <button type="button" id="storage-guide-expand">Ampliar infografía</button>
+              <a id="storage-guide-original" target="_blank" rel="noreferrer">Abrir imagen original (nueva pestaña)</a>
+              <a id="storage-guide-download" download>Descargar infografía</a>
+            </div>
+            <details class="ram-text-alternative">
+              <summary>Descripción de los seis paneles en texto</summary>
+              <ol>
+                <li><strong>Almacenamiento no volátil.</strong> Guarda el sistema y los archivos con el equipo apagado.</li>
+                <li><strong>HDD.</strong> Usa platos magnéticos que giran y cabezales móviles. La guía muestra un ejemplo SATA.</li>
+                <li><strong>SSD y eMMC.</strong> Usan memoria flash y un controlador. El montaje y la interfaz dependen del equipo.</li>
+                <li><strong>Golpes.</strong> Evitá las caídas, especialmente con un HDD en uso. Ante una alerta S.M.A.R.T., registrá el aviso y priorizá el respaldo con el docente.</li>
+                <li><strong>Temperatura y polvo.</strong> Mantené libres las rejillas de la netbook y conservá los sellos de la unidad.</li>
+                <li><strong>Lentitud y errores.</strong> Registrá lo que ocurre y protegé los archivos. Elegí la comprobación o el mantenimiento según el tipo de unidad y la evidencia disponible.</li>
+              </ol>
+            </details>
+          </details>
+          <dialog id="storage-guide-dialog" class="ram-image-dialog" aria-labelledby="storage-guide-title">
+            <h3 id="storage-guide-title">Guía de almacenamiento ampliada</h3>
+            <div class="ram-media-actions">
+              <label for="storage-guide-zoom">Ampliación</label>
+              <input id="storage-guide-zoom" type="range" min="100" max="400" step="25" value="100" />
+              <output id="storage-guide-zoom-value" for="storage-guide-zoom">100 %</output>
+              <button id="storage-guide-close" type="button" autofocus>Cerrar infografía</button>
+            </div>
+            <div class="ram-image-scroll" role="region" aria-label="Infografía ampliada con desplazamiento" tabindex="0"><img id="storage-guide-full" alt="" /></div>
+          </dialog>
+        </section>
+      </section>
+      <section id="connectors-chapter" class="motherboard-chapter connectors-chapter" aria-labelledby="connectors-title" hidden>
+        <header class="motherboard-heading">
+          <h2 id="connectors-title" tabindex="-1">Conectores</h2>
+          <button id="connectors-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="motherboard-spread">
+          <article class="motherboard-page">
+            <h3>¿Qué se conecta y dónde?</h3>
+            <p>Elegí una zona de la placa para ubicarla en la foto y leer qué función cumple.</p>
+            <div id="connectors-controls" class="connectors-controls" role="group" aria-label="Zonas de conexión"></div>
+            <figure id="connectors-reference" class="connectors-figure">
+              <div class="connectors-photo">
+                <img id="connectors-photo" width="510" height="406" decoding="async" alt="Cara superior de una placa de netbook con puertos en el borde derecho y conectores en la parte inferior." />
+                <span id="connectors-marker" class="connectors-marker" aria-hidden="true"></span>
+              </div>
+              <figcaption role="status">
+                <strong id="connectors-zone-title"></strong>
+                <p id="connectors-zone-description"></p>
+              </figcaption>
+            </figure>
+          </article>
+          <article class="motherboard-page">
+            <h3>De la forma a la función</h3>
+            <p>El conector es la pieza física donde encaja una ficha, un cable o un módulo. La interfaz define cómo se comunican o se alimentan los dispositivos.</p>
+            <dl class="motherboard-functions">
+              <dt>Periféricos y datos</dt>
+              <dd>USB-A es rectangular. USB-C es ovalado y reversible. Para saber si un USB-C admite video o carga de la netbook, consultá la ficha del modelo.</dd>
+              <dt>Pantalla y sonido</dt>
+              <dd>HDMI transporta video digital y audio. VGA lleva video analógico. El conector de audio de 3,5 mm puede ser combinado o estar separado en auriculares y micrófono.</dd>
+              <dt>Red y alimentación</dt>
+              <dd>El puerto Ethernet (RJ45) conecta la netbook a una red cableada. Para la carga, verificá qué adaptador indica el fabricante, incluso si la ficha encaja.</dd>
+              <dt>Conexiones internas</dt>
+              <dd>El teclado y el touchpad pueden usar cintas planas. La pantalla interna puede usar eDP o LVDS, según el modelo. SATA, M.2 y SO-DIMM son ejemplos de conexiones internas para almacenamiento o RAM, según el caso.</dd>
+            </dl>
+            <aside class="motherboard-note">
+              <h4>Primero observá</h4>
+              <p>Si ves contactos torcidos, una carcasa rota o señales de líquido, suspendé las pruebas y avisá al docente. Para intervenir sobre el equipo, seguí el procedimiento del modelo con supervisión.</p>
+            </aside>
+          </article>
+        </div>
+        <section class="connectors-guide" aria-labelledby="connectors-guide-title">
+          <h3 id="connectors-guide-title">Guía visual y funciones</h3>
+          <details class="ram-resource-panel">
+            <summary>Puertos externos ilustrados</summary>
+            <p>La guía muestra ejemplos de distintos equipos. Para confirmar los puertos disponibles, la velocidad y el cargador compatible, consultá la ficha del modelo. El formato USB-C por sí solo no indica si admite video o carga.</p>
+            <figure class="connectors-figure">
+              <img id="connectors-guide-image" width="2752" height="1536" loading="lazy" decoding="async" alt="Infografía con cuatro vistas laterales de netbooks que señalan alimentación, red, video, USB, tarjetas, audio y seguridad. Las funciones se describen debajo." />
+            </figure>
+            <div class="ram-media-actions">
+              <a id="connectors-guide-open" target="_blank" rel="noreferrer">Ver guía a tamaño completo (nueva pestaña)</a>
+              <a id="connectors-guide-download" download>Descargar imagen</a>
+            </div>
+            <dl class="motherboard-functions">
+              <dt>Alimentación DC</dt><dd>Recibe energía del adaptador compatible para alimentar el equipo y, cuando corresponde, cargar la batería.</dd>
+              <dt>Ethernet (RJ45)</dt><dd>Conecta la netbook por cable a la red local.</dd>
+              <dt>VGA y HDMI</dt><dd>VGA envía video analógico a un monitor o proyector. HDMI envía video digital y puede llevar audio por el mismo cable.</dd>
+              <dt>USB-A y USB-C</dt><dd>Conectan periféricos como un mouse o un pendrive. El tipo de ficha y la versión de USB son datos distintos.</dd>
+              <dt>Lector SD o microSD</dt><dd>Permite leer y escribir archivos en tarjetas de memoria compatibles.</dd>
+              <dt>Audio de 3,5 mm</dt><dd>Según el equipo, hay tomas separadas para auriculares y micrófono o una sola toma combinada (TRRS).</dd>
+              <dt>Ranura Kensington</dt><dd>Sirve de anclaje para un candado compatible. Es una conexión mecánica.</dd>
+            </dl>
+          </details>
+          <details class="ram-resource-panel">
+            <summary>Conectores internos y qué enlazan</summary>
+            <p>En la foto de la placa podés ubicar un conector para cinta plana y un zócalo para RAM. Los siguientes ejemplos varían según el modelo.</p>
+            <dl class="motherboard-functions">
+              <dt>Teclado y touchpad</dt><dd>Sus cintas planas llevan señales de las teclas, los movimientos y los clics a la placa. Algunos conectores tienen un seguro tipo ZIF.</dd>
+              <dt>Pantalla interna (eDP o LVDS)</dt><dd>Enlaza la placa con el panel y lleva la señal de imagen. El tipo se confirma en el manual del equipo.</dd>
+              <dt>Almacenamiento (SATA o M.2)</dt><dd>Permite que la placa lea y escriba en una unidad compatible. M.2 describe un formato de conexión. Revisá qué interfaz admite la ranura.</dd>
+              <dt>Memoria RAM (SO-DIMM)</dt><dd>Conecta un módulo de memoria reemplazable a la placa. Algunos equipos tienen toda la RAM soldada y carecen de este zócalo.</dd>
+              <dt>Batería</dt><dd>Enlaza la batería interna con el circuito de alimentación y carga.</dd>
+              <dt>Ventilador</dt><dd>En los equipos que tienen uno, lo alimenta y puede llevar señales de control o velocidad.</dd>
+            </dl>
+            <p>Para indagar, si la pantalla interna queda negra y el proyector muestra imagen, ¿qué conexión interna buscarías en el manual? ¿Qué dato te ayudaría a investigarla?</p>
+          </details>
+        </section>
+        <section class="motherboard-assessment" aria-labelledby="connectors-assessment-title">
+          <h3 id="connectors-assessment-title">¿Falla el periférico o el puerto?</h3>
+          <div class="motherboard-note">
+            <h4>Caso simulado</h4>
+            <p>En el taller, un mouse USB funciona en el puerto B de una netbook, pero no responde en el puerto A. Ambos son USB-A. No se observan daños desde afuera.</p>
+          </div>
+          <form id="connectors-assessment">
+            <div id="connectors-questions" class="motherboard-questions"></div>
+            <label class="connectors-reflection" for="connectors-justification">
+              <strong>Para conversar en clase</strong>
+              ¿Qué resultado te haría cambiar tu hipótesis? Escribí qué compararías y por qué. Revisá tu explicación con el docente.
+            </label>
+            <textarea id="connectors-justification" rows="3"></textarea>
+            <div class="motherboard-assessment-actions">
+              <button class="motherboard-check" type="submit">Comprobar respuestas</button>
+              <button type="reset">Reiniciar actividad</button>
+            </div>
+            <p id="connectors-result" class="motherboard-result" tabindex="-1" hidden></p>
+          </form>
+        </section>
+      </section>
+      <section id="flex-chapter" class="motherboard-chapter flex-chapter" aria-labelledby="flex-title" hidden>
+        <header class="motherboard-heading">
+          <h2 id="flex-title" tabindex="-1">Cables flex</h2>
+          <button id="flex-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="motherboard-spread">
+          <article class="motherboard-page">
+            <h3>Seguí el recorrido de cada cable</h3>
+            <p>Elegí una conexión para ubicarla en la guía y leer qué comunica con la placa madre.</p>
+            <div id="flex-controls" class="flex-controls" role="group" aria-label="Recorridos de los cables"></div>
+            <figure id="flex-route" class="flex-guide">
+              <div class="flex-guide-image">
+                <img id="flex-guide-image" width="2752" height="1536" decoding="async" alt="Esquema de una netbook con recorridos hacia la placa auxiliar, la pantalla y varios módulos. Los controles describen cada recorrido en texto." />
+                <span id="flex-marker" class="flex-guide-marker" aria-hidden="true"></span>
+              </div>
+              <figcaption role="status">
+                <strong id="flex-route-title"></strong>
+                <p id="flex-route-description"></p>
+              </figcaption>
+            </figure>
+            <div class="ram-media-actions">
+              <a id="flex-guide-open" target="_blank" rel="noreferrer">Ver guía a tamaño completo (nueva pestaña)</a>
+              <a id="flex-guide-download" download>Descargar la infografía</a>
+            </div>
+          </article>
+          <article class="motherboard-page">
+            <h3>¿Cómo se reconoce un flex?</h3>
+            <dl class="motherboard-functions">
+              <dt>FFC · Cable plano flexible</dt>
+              <dd>Una cinta delgada con conductores paralelos. Los contactos quedan expuestos en el extremo que se conecta.</dd>
+              <dt>FPC · Circuito impreso flexible</dt>
+              <dd>Sus pistas se dibujan sobre un soporte flexible. Pueden seguir recorridos de distinta forma y conectar componentes del propio circuito.</dd>
+              <dt>ZIF · Conector de fuerza de inserción nula</dt>
+              <dd>En algunos conectores el pestillo mantiene el extremo de la cinta en su lugar. También existen conectores con seguros de otro tipo o sin pestillo.</dd>
+              <dt>Compatibilidad</dt>
+              <dd>Dos cables parecidos pueden tener distinta cantidad o separación de contactos, otra orientación o una función diferente. Confirmá el repuesto y su recorrido en la documentación del modelo.</dd>
+            </dl>
+            <aside class="motherboard-note">
+              <h4>Cómo leer la infografía</h4>
+              <p>Los colores sirven para seguir el dibujo. El número de contactos, el tipo de seguro y la conexión del botón de encendido varían según el equipo. Una netbook que no enciende puede tener varias causas.</p>
+              <p>Antes de intervenir, consultá el procedimiento del modelo con el docente, verificá el aislamiento de la alimentación y evitá forzar el cable o el pestillo.</p>
+            </aside>
+          </article>
+        </div>
+        <section class="motherboard-assessment" aria-labelledby="flex-assessment-title">
+          <h3 id="flex-assessment-title">¿Qué explica el parpadeo?</h3>
+          <div class="motherboard-note">
+            <h4>Caso simulado</h4>
+            <p>Durante una clase, la pantalla interna de una netbook parpadea. Al mismo tiempo, un proyector conectado al equipo mantiene una imagen estable.</p>
+          </div>
+          <form id="flex-assessment">
+            <div id="flex-questions" class="motherboard-questions"></div>
+            <label class="flex-reflection" for="flex-justification">
+              <strong>Para conversar en clase.</strong> Escribí una hipótesis y una observación que te haría revisarla. Conversá tu explicación con el docente.
+            </label>
+            <textarea id="flex-justification" rows="3"></textarea>
+            <div class="motherboard-assessment-actions">
+              <button class="motherboard-check" type="submit">Comprobar respuestas</button>
+              <button type="reset">Reiniciar actividad</button>
+            </div>
+            <p id="flex-result" class="motherboard-result" tabindex="-1" hidden></p>
+          </form>
+        </section>
+      </section>
+      <section id="keyboard-chapter" class="motherboard-chapter keyboard-chapter" aria-labelledby="keyboard-title" hidden>
+        <header class="motherboard-heading">
+          <h2 id="keyboard-title" tabindex="-1">Teclado</h2>
+          <button id="keyboard-return-index" type="button">← Volver al índice</button>
+        </header>
+        <div class="motherboard-spread">
+          <article class="motherboard-page">
+            <h3>Reconocé el teclado y su conexión</h3>
+            <p>Elegí un tema para señalarlo en la infografía y leer la explicación.</p>
+            <div id="keyboard-controls" class="flex-controls" role="group" aria-label="Temas de la guía del teclado"></div>
+            <figure id="keyboard-reference" class="flex-guide">
+              <div class="flex-guide-image">
+                <img id="keyboard-guide-image" width="2752" height="1536" decoding="async" alt="Infografía de cuidado del teclado con ejemplos de preparación, conexión del flex y protección del ensamblaje." />
+                <span id="keyboard-marker" class="flex-guide-marker" aria-hidden="true"></span>
+              </div>
+              <figcaption role="status">
+                <strong id="keyboard-topic-title"></strong>
+                <p id="keyboard-topic-description"></p>
+              </figcaption>
+            </figure>
+            <div class="ram-media-actions">
+              <a id="keyboard-guide-open" target="_blank" rel="noreferrer">Ver guía a tamaño completo (nueva pestaña)</a>
+              <a id="keyboard-guide-download" download>Descargar la infografía</a>
+            </div>
+          </article>
+          <article class="motherboard-page">
+            <h3>¿Qué ocurre al pulsar una tecla?</h3>
+            <dl class="motherboard-functions">
+              <dt>Tecla y mecanismo</dt>
+              <dd>En muchos teclados de netbook, un mecanismo de tijera guía el movimiento y una cúpula elástica ayuda a que la tecla vuelva a su posición.</dd>
+              <dt>Membrana y matriz</dt>
+              <dd>Al pulsar, se cierra un contacto entre una fila y una columna eléctricas. El controlador identifica la tecla al revisar la matriz. Esas líneas pueden agrupar teclas que no están juntas a la vista.</dd>
+              <dt>Cable flex</dt>
+              <dd>Conduce señales entre el teclado y la placa. Varias teclas que dejan de responder pueden orientar la revisión de la matriz o de la conexión. Si las teclas responden con otros símbolos, conviene verificar primero la distribución configurada.</dd>
+            </dl>
+            <aside class="motherboard-note">
+              <h4>Cuidado preventivo</h4>
+              <p>Para la superficie usá un paño suave con el equipo apagado. Evitá rociar líquidos directamente. Si hay un derrame reciente, suspendé las pruebas y avisá al docente.</p>
+              <p>La infografía ilustra tareas internas. La descarga residual, la desconexión de la batería y la protección contra descargas electrostáticas se verifican según el manual y las condiciones del taller.</p>
+            </aside>
+          </article>
+        </div>
+        <section class="motherboard-assessment" aria-labelledby="keyboard-assessment-title">
+          <h3 id="keyboard-assessment-title">¿Por qué fallan solo algunas teclas?</h3>
+          <div class="motherboard-note">
+            <h4>Caso simulado</h4>
+            <p>En una netbook del taller, E, D y C no aparecen al pulsarlas en el teclado integrado. En el mismo editor de texto, un teclado USB registra las tres. Otras teclas del teclado integrado responden.</p>
+          </div>
+          <form id="keyboard-assessment">
+            <div id="keyboard-questions" class="motherboard-questions"></div>
+            <label class="flex-reflection" for="keyboard-justification">
+              <strong>Para conversar en clase.</strong> Escribí una hipótesis y qué resultado te haría cambiarla. Revisá tu explicación con el docente.
+            </label>
+            <textarea id="keyboard-justification" rows="3"></textarea>
+            <div class="motherboard-assessment-actions">
+              <button class="motherboard-check" type="submit">Comprobar respuestas</button>
+              <button type="reset">Reiniciar actividad</button>
+            </div>
+            <p id="keyboard-result" class="motherboard-result" tabindex="-1" hidden></p>
+          </form>
+        </section>
+      </section>
+      <section id="bibliography-chapter" class="motherboard-chapter bibliography-chapter" aria-labelledby="bibliography-title" hidden>
+        <header class="motherboard-heading">
+          <h2 id="bibliography-title" tabindex="-1">Bibliografía</h2>
+          <button id="bibliography-return-index" type="button">← Volver al índice</button>
+        </header>
+        <p class="bibliography-intro">Los enlaces a sitios externos se abren en otra pestaña y requieren Internet.</p>
+        <ul id="bibliography-list">
+          <li><a href="./recursos/motherboard/la-motherboard.pdf" download>Descargar «La motherboard» (PDF)</a></li>
+          <li><a href="https://www.intel.com/content/www/us/en/gaming/resources/how-to-choose-a-motherboard.html" target="_blank" rel="noreferrer">Intel · Placas y componentes</a></li>
+          <li><a href="https://uefi.org/specs/UEFI/2.10/03_Boot_Manager.html" target="_blank" rel="noreferrer">UEFI · Arranque del equipo</a></li>
+          <li><a href="https://www.dell.com/support/kbdoc/en-in/000137973/safety-precautions-when-working-with-electrical-equipment" target="_blank" rel="noreferrer">Dell · Protección eléctrica y electrostática</a></li>
+          <li><a href="./recursos/almacenamiento/almacenamiento-netbooks.pdf" download>Descargar el PDF de almacenamiento en netbooks educativas</a></li>
+          <li><a href="https://www.kingston.com/en/ssd/ssd-faq" target="_blank" rel="noreferrer">Kingston · Formatos M.2 e interfaces</a></li>
+          <li><a href="https://americas.kioxia.com/en-us/business/memory/emmc.html" target="_blank" rel="noreferrer">KIOXIA · Memoria integrada eMMC</a></li>
+          <li><a href="https://www.seagate.com/support/kb/my-system-reported-a-smart-error-on-the-drive-184619en/" target="_blank" rel="noreferrer">Seagate · Alertas S.M.A.R.T. y respaldo</a></li>
+          <li><a href="https://support.microsoft.com/es-es/windows/experience/storage-filemanagement/defragment-optimize-your-data-drives-in-windows" target="_blank" rel="noreferrer">Microsoft · Optimización de HDD y SSD</a></li>
+          <li><a href="./recursos/conectores/conectores-netbooks.pdf" download>Descargar el PDF sobre conectores en netbooks educativas</a></li>
+          <li><a href="https://www.usb.org/sites/default/files/usb_type-c_language_product_and_packaging_guidelines_20230320.pdf" target="_blank" rel="noreferrer">USB-IF · Forma y capacidades de USB-C</a></li>
+          <li><a href="https://www.dell.com/support/kbdoc/en-us/000132048/how-to-troubleshoot-usb-issues" target="_blank" rel="noreferrer">Dell · Comprobaciones de un puerto USB</a></li>
+          <li><a href="./recursos/flex/cables-flex.pdf" download>Descargar el PDF sobre cables flex</a></li>
+          <li><a href="https://www.molex.com/en-us/products/connectors/ffc-fpc-connectors" target="_blank" rel="noreferrer">Molex · Conectores para cables FFC y FPC</a></li>
+          <li><a href="https://vesa.org/featured-articles/vesa-publishes-embedded-displayport-standard-version-1-5/" target="_blank" rel="noreferrer">VESA · Interfaz eDP para pantallas internas</a></li>
+          <li><a href="./recursos/teclado/teclado-netbooks.pdf" download>Descargar el PDF sobre teclados en netbooks educativas</a></li>
+          <li><a href="https://www.dell.com/support/contents/en-us/article/product-support/self-support-knowledgebase/mouse-keyboard-touchpad/laptop-keyboard-not-working" target="_blank" rel="noreferrer">Dell · Problemas de teclado y distribución</a></li>
+          <li><strong>ADATA Argentina.</strong> (s.f.). <cite>DDR4 vs. DDR5: las diferencias entre DDR4 y DDR5</cite>. ADATA.</li>
+          <li><strong>Aula en la Nube.</strong> (s.f.). <cite>Memoria RAM, la explicación definitiva</cite>. Aula en la Nube.</li>
+          <li><strong>CADIEEL (Cámara Argentina de Industrias Electrónicas, Electromecánicas y Luminotécnicas).</strong> (s.f.). <cite>Netbooks Juana Manso: cuántas compraron, cuánto costarán y cómo son</cite>. CADIEEL.</li>
+          <li><strong>CATEA.</strong> (s.f.). <cite>Generaciones de netbooks Conectar Igualdad: ficha técnica</cite>. CATEA.</li>
+          <li><strong>CodeaTu.</strong> (s.f.). <cite>Problemas frecuentes y diagnóstico de la RAM — El ordenador — nivel básico</cite>. CodeaTu.</li>
+          <li><strong>Compuline.</strong> (s.f.). <cite>¿Cómo diagnosticar problemas en la memoria RAM?</cite>. Compuline.</li>
+          <li><strong>Dell Inc. / Cyberpuerta.</strong> (s.f.). <cite>Dell Latitude 3400: Manual de servicio</cite> [Manual técnico en PDF]. Cyberpuerta.</li>
+          <li><strong>Dell Puerto Rico.</strong> (s.f.). <cite>¿Qué es la memoria DDR3L?</cite>. Soporte Técnico Dell.</li>
+          <li><strong>Hard Zone.</strong> (s.f.). <cite>Memoria RAM DDR, DDR2, DDR3, DDR4 y DDR5, ¿en qué se diferencian?</cite>. Hard Zone.</li>
+          <li><strong>HP Colombia.</strong> (s.f.). <cite>Guía de compra de memoria RAM: cuánta necesitas y cómo elegir bien</cite>. HP Store.</li>
+          <li><strong>idata.</strong> (s.f.). <cite>Comprensión de la información de memoria</cite>. idata.</li>
+          <li><strong>Kingston Technology Company.</strong> (s.f.). <cite>Glosario de términos de memoria y almacenamiento</cite>. Kingston Technology.</li>
+          <li><strong>La Opinión Austral.</strong> (s.f.). <cite>Cómo son las computadoras del plan Conectar Igualdad que entregará el gobierno a estudiantes</cite>. La Opinión Austral.</li>
+          <li><strong>MercadoLibre Argentina.</strong> (s.f.). <cite>Netbook Banghó Conectar Igualdad Generación 2 (G2) para repuesto</cite> [Ficha de producto]. MercadoLibre.</li>
+          <li><strong>MercadoLibre Argentina.</strong> (s.f.). <cite>Netbook Conectar Igualdad Juana Manso 8GB RAM y SSD 480GB</cite> [Ficha de producto]. MercadoLibre.</li>
+          <li><strong>NovaCustom.</strong> (s.f.). <cite>¿Cómo hacer un memtest con MemTest86?</cite>. NovaCustom.</li>
+          <li><strong>PcComponentes.</strong> (s.f.). <cite>¿Qué es DDR en la memoria RAM y qué tipos existen?</cite>. PcComponentes.</li>
+          <li><strong>PcComponentes.</strong> (s.f.). <cite>SO-DIMM vs. DIMM: ¿para qué sirve cada memoria RAM?</cite>. PcComponentes.</li>
+          <li><strong>Reddit.</strong> (s.f.). <cite>Does the number of pins in SODIMM RAM matter?</cite>. r/buildapc.</li>
+          <li><strong>Reddit.</strong> (s.f.). <cite>RAM Question - DDR5 SODIMM - How many pins? 260 or 262?</cite>. r/buildapc.</li>
+          <li><strong>Reparándolo Ecuador.</strong> (s.f.). <cite>Diferencia entre memoria DDR3 y DDR3L para PCs y laptops</cite>. Reparándolo.</li>
+          <li><strong>SCALA (Catálogo de Recursos Educativos).</strong> (s.f.). <cite>Manual de mantenimiento y redes</cite> [Documento PDF]. SCALA.</li>
+          <li><strong>Sistemas y Operativos.</strong> (s.f.). <cite>Cómo entender las características de una memoria RAM</cite>. Sistemas y Operativos.</li>
+          <li><strong>Tierra del Fuego Gobierno / Medios de Prensa.</strong> (s.f.). <cite>Plan Juana Manso: así es la nueva netbook educativa que se produce en Tierra del Fuego</cite>.</li>
+          <li><strong>Universidad Tecnológica Nacional (UTN) - Facultad Regional San Francisco.</strong> (s.f.). <cite>Técnico Superior en Programación: Sistemas de procesamiento de datos</cite> [Apunte de cátedra en PDF]. UTN San Francisco.</li>
+          <li><strong>Wikilibros.</strong> (s.f.). <cite>Mantenimiento y montaje de equipos informáticos: La memoria R.A.M.</cite>. Wikilibros.</li>
+          <li><strong>Wikipedia.</strong> (s.f.). <cite>Conectar Igualdad</cite>. Wikipedia, la enciclopedia libre.</li>
+          <li><strong>YouTube.</strong> (s.f.-a). <cite>Arquitectura, evolución tecnológica y mantenimiento de la memoria RAM: Análisis centrado en los dispositivos del Programa Conectar Igualdad</cite> [Documento monográfico / Fuente de investigación].</li>
+          <li><strong>YouTube.</strong> (s.f.-b). <cite>Así es la nueva memoria RAM de la Netbook Juana Manso y Conectar Igualdad</cite> [Video en formato Shorts]. YouTube.</li>
+          <li><strong>YouTube.</strong> (s.f.-c). <cite>Cómo testear RAM y detectar errores con Memtest (fácil y sencillo)</cite> [Video instructivo]. YouTube.</li>
+          <li><strong>YouTube.</strong> (s.f.-d). <cite>Netbook del Gobierno G7 características técnicas</cite> [Video demostrativo]. YouTube.</li>
+          <li><strong>YouTube.</strong> (s.f.-e). <cite>Portátil low cost en pleno 2026: Mega review netbook Juana Manso</cite> [Video análisis técnico]. YouTube.</li>
+        </ul>
+      </section>
+      <div id="book-workspace" class="laboratory-layout">
+        <aside class="notebook" aria-labelledby="stage-title">
+          <div class="notebook-heading"><span class="eyebrow">CUADERNO DE LABORATORIO</span><span aria-hidden="true">⌑</span></div>
+          <div class="stage-number">01<span>/ MEMORIA RAM</span></div>
+          <h2 id="stage-title">Observar y relacionar</h2>
+          <p>Todo diagnóstico empieza con una buena observación.</p>
+          <div class="stage-note"><span class="note-dot" aria-hidden="true"></span><div><strong>Un mapa para comprender</strong><p>Abrí el libro y elegí «Ver componentes» para recorrer un esquema del interior. Cada pieza tiene una función y una pregunta para investigar.</p></div></div>
+          <div class="learning"><h3>El recorrido del laboratorio</h3><ol><li><span>01</span> Reconocer los componentes</li><li><span>02</span> Cuidar y prevenir</li><li><span>03</span> Interpretar las fallas</li></ol></div>
+          <div class="paper-footer"><span aria-hidden="true">✳</span> Aprender haciendo, paso a paso.</div>
+        </aside>
+        <section id="laboratorio" class="workspace" tabindex="-1" aria-labelledby="workspace-title">
+          <header class="workspace-header"><div><span class="live-dot" aria-hidden="true"></span><h2 id="workspace-title">Mesa de exploración</h2></div><span class="tag">ENTORNO 3D</span></header>
+          <section id="ram-visual-mount" class="ram-book-guide" aria-label="Guía visual dentro del libro" hidden><header><strong>Libro abierto · Guía de RAM</strong><label><input id="ram-show-markers" type="checkbox" checked /> Mostrar referencias</label></header><p id="ram-guide-selection">Referencias 1–6 · Elegí una parte</p><p class="ram-guide-help">La guía está en la página izquierda y la memoria emerge de la derecha. Elegí un número para acercarte a esa parte. «Ver libro completo» recupera ambas páginas.</p><div class="ram-guide-zoom"><button id="ram-guide-overview" type="button">Ver libro completo</button><button id="ram-guide-zoom-in" type="button">Acercar RAM</button><button id="ram-guide-zoom-out" type="button">Alejar RAM</button><button id="ram-open-resources" type="button" aria-controls="ram-resources">Video, infografía y PDF</button></div></section>
+          <div id="scene-container" class="scene-container">
+            <canvas id="scene" tabindex="0" aria-label="Libro tridimensional cerrado. Flechas para girar, más y menos para zoom, Inicio para restablecer, A para abrir y C para cerrar." aria-describedby="scene-instructions"></canvas>
+            <span class="scene-coordinate" aria-hidden="true">MESA 01 / LIBRO DE LABORATORIO</span>
+            <p id="internal-banner" class="internal-banner" hidden>ESQUEMA DIDÁCTICO <span>Ubicación ilustrativa · Varía según el modelo</span></p>
+            <div id="component-markers" class="component-markers" aria-hidden="true" hidden></div>
+            <div id="ram-markers" class="ram-markers" role="group" aria-label="Referencias numeradas sobre la memoria RAM" hidden></div>
+            <p id="scene-error" class="scene-error" role="alert" hidden></p>
+          </div>
+          <div class="book-actions"><div><span class="eyebrow">CUADERNO DE EXPLORACIÓN</span><p id="book-state">Libro cerrado · Listo para explorar</p></div><div class="book-action-buttons"><label class="motion-control"><input id="reduce-book-motion" type="checkbox" /> Sin animación</label><button id="toggle-book" type="button" aria-expanded="false" aria-controls="book-reading">Abrir libro</button></div></div>
+          <section id="ram-chapter" class="ram-chapter" aria-labelledby="ram-title" hidden>
+            <header class="ram-heading"><span class="eyebrow">CAPÍTULO 01 · MEMORIA RAM</span><h2 id="ram-title" tabindex="-1">Un espacio de trabajo temporal</h2><p>SO-DIMM ilustrativo · Forma, chips y contactos simplificados · No representa un modelo comercial.</p><div class="ram-controls"><label for="ram-yaw">Girar módulo <output id="ram-yaw-value" for="ram-yaw">12°</output><input id="ram-yaw" type="range" min="0" max="359" value="12" step="1" /></label><button id="ram-reset" type="button">Vista inicial de RAM</button><button id="ram-label-focus" type="button">Leer la etiqueta</button></div></header>
+            <div class="ram-spread"><article><span class="eyebrow">PÁGINA 03 · RECONOCER</span><h3>¿Qué hace la RAM?</h3><p id="ram-introduction"></p>
+              <div id="ram-parts" role="group" aria-label="Partes del módulo RAM, alternativa a la selección 3D"></div><section class="ram-part-detail" aria-labelledby="ram-part-title"><h4 id="ram-part-title"></h4><p id="ram-part-text" role="status"></p></section><h3>Memorias de notebook y netbook</h3><p id="ram-format"></p><ul id="ram-portable-notes"></ul><p id="ram-compatibility"></p><p class="ram-safety" id="ram-caution"></p></article>
+            <article><span class="eyebrow">PÁGINA 04 · INTERPRETAR</span><h3 id="ram-label-title" tabindex="-1">Leé una etiqueta de ejemplo</h3><div class="ram-label"><strong>LAB-RAM / EJEMPLO DIDÁCTICO</strong><dl id="ram-specifications"></dl></div><p id="ram-label-notice" class="ram-note"></p><h3>Observá antes de concluir</h3><p class="ram-note">Situación ficticia: los valores siguientes no son mediciones de tu equipo.</p><div id="ram-evidence"></div><form id="ram-reflection"><label for="ram-observation"><span id="ram-question-observation"></span><textarea id="ram-observation" rows="3" maxlength="1800"></textarea></label><label for="ram-explanation"><span id="ram-question-explanation"></span><textarea id="ram-explanation" rows="3" maxlength="1800"></textarea></label><p>Al menos 20 caracteres por respuesta. Borrador conservado en esta sesión al cambiar de capítulo; no se guarda al recargar ni se califica automáticamente.</p><button type="submit">Registrar mi reflexión</button><p id="ram-feedback" role="status"></p></form></article></div>
+            <section id="ram-resources" class="ram-resources" aria-labelledby="ram-resources-title">
+              <span class="eyebrow">ANEXOS DEL CAPÍTULO · ELEGÍ CÓMO EXPLORAR</span><h3 id="ram-resources-title" tabindex="-1">La RAM en distintos medios</h3><p>Podés observar el modelo del libro, mirar un video, ampliar una infografía o consultar el PDF. Ningún recurso es obligatorio para completar la actividad.</p>
+              <nav id="ram-resource-menu" class="ram-resource-menu" aria-label="Elegir recurso de RAM"><a href="#ram-video-panel">Video y síntesis escrita</a><a href="#ram-image-panel">Infografía y lectura textual</a><a href="#ram-pdf-panel">PDF y mapa de lectura</a></nav>
+              <details id="ram-video-panel" class="ram-resource-panel"><summary>01 · Ver y escuchar: video sobre la RAM</summary><h4 id="ram-media-video-title"></h4><p id="ram-media-video-credit" class="ram-resource-caption"></p><p>El video es externo y requiere Internet. Solo se conecta con YouTube al cargarlo; no se reproduce automáticamente. Si el reproductor no funciona aquí, usá el enlace de YouTube.</p><div class="ram-media-actions"><button id="ram-video-load" type="button">Cargar video de YouTube</button><button id="ram-video-stop" type="button" hidden>Cerrar reproductor</button><a id="ram-watch-youtube" target="_blank" rel="noreferrer">Ver en YouTube (nueva pestaña)</a></div><div id="ram-video-host"></div><details class="ram-text-alternative" open><summary>Alternativa sin audio: síntesis escrita</summary><p>Esta es una síntesis propia del capítulo, no una transcripción del video. No depende de que YouTube ofrezca subtítulos.</p><div id="ram-media-synthesis"></div></details></details>
+              <details id="ram-image-panel" class="ram-resource-panel"><summary>02 · Observar: infografía de memoria RAM</summary><p>Infografía original aportada para este libro. Podés verla completa, ampliarla con controles de zoom o leer una descripción textual revisada.</p><div class="ram-media-note"><strong>Aclaraciones para leer el original</strong><ul id="ram-infographic-notes"></ul></div><figure><img id="ram-resource-image" width="2752" height="1536" decoding="async" alt="Infografía sobre función de la RAM, DRAM, generaciones DDR, formatos, parámetros y diagnóstico. La descripción textual y las correcciones acompañan la imagen." /><figcaption>Archivo original · PNG · aproximadamente 5,7 MiB. Conservado sin modificar; las aclaraciones anteriores forman parte de su lectura.</figcaption></figure><div class="ram-media-actions"><button id="ram-image-enlarge" type="button">Ampliar infografía</button><a id="ram-image-open-original" target="_blank" rel="noreferrer">Abrir imagen original (nueva pestaña)</a><a id="ram-image-download" download="guia-visual-ram.png">Descargar infografía</a></div><details class="ram-text-alternative" open><summary>Descripción extendida y revisada de la infografía</summary><p>Recorre los conceptos de la imagen sin depender de sus colores ni de su letra pequeña. Incorpora las aclaraciones indicadas arriba.</p><div id="ram-infographic-reading"></div></details></details>
+              <details id="ram-pdf-panel" class="ram-resource-panel"><summary>03 · Consultar: diagnóstico y reparación de memoria RAM</summary><p>PDF original aportado · 13 páginas · aproximadamente 13,8 MiB. Está compuesto por imágenes; el mapa de lectura en HTML permite conocer sus temas sin depender del visor PDF.</p><div class="ram-media-note"><strong>Lectura con acompañamiento docente</strong><ul id="ram-pdf-notes"></ul></div><div class="ram-media-actions"><button id="ram-pdf-preview" type="button">Ver PDF dentro del capítulo</button><button id="ram-pdf-close" type="button" hidden>Cerrar vista del PDF</button><a id="ram-pdf-open-original" target="_blank" rel="noreferrer">Abrir PDF original (nueva pestaña)</a><a id="ram-pdf-download" download="diagnostico-reparacion-ram.pdf">Descargar PDF</a></div><p>El visor depende del navegador. Si no se muestra, abrí o descargá el archivo con los enlaces anteriores.</p><div id="ram-pdf-host"></div><details class="ram-text-alternative" open><summary>Mapa de lectura accesible del PDF</summary><p>Síntesis de temas y alcance; no transcribe cada página ni sustituye la documentación del modelo.</p><div id="ram-pdf-reading-map"></div></details></details>
+              <p class="ram-resource-caption">La infografía y el PDF se sirven desde este proyecto y funcionan sin Internet cuando ya están cargados, con el servidor local activo. El video y los enlaces externos requieren conexión.</p><button id="ram-resources-back" type="button">Volver al libro 3D</button>
+              <dialog id="ram-image-dialog" class="ram-image-dialog" aria-labelledby="ram-image-dialog-title"><h3 id="ram-image-dialog-title">Infografía de memoria RAM</h3><p>Usá los controles para ampliar. El área de la imagen admite desplazamiento; Escape cierra y vuelve al botón de apertura.</p><div class="ram-media-actions"><button id="ram-image-zoom-in" type="button">Ampliar</button><button id="ram-image-zoom-out" type="button">Reducir</button><button id="ram-image-fit" type="button">Ajustar al ancho</button><output id="ram-image-zoom-value" aria-live="polite">100 %</output><button id="ram-image-close" type="button">Cerrar infografía</button></div><div class="ram-image-scroll" tabindex="0" role="region" aria-label="Imagen ampliada, desplazable con las flechas"><img id="ram-image-full" alt="Infografía original de memoria RAM ampliada. Su descripción textual revisada está disponible en el capítulo." /></div></dialog>
+            </section>
+            <nav class="ram-navigation" aria-label="Recorrido del capítulo RAM"><button id="ram-previous" type="button">← Volver a la netbook</button><button id="ram-index" type="button">Índice del libro</button><button id="ram-next" type="button">Siguiente: seguridad →</button></nav>
+            
+          </section>
+          <section id="netbook-tools" class="netbook-tools" aria-label="Controles de la netbook" hidden>
+            <div class="netbook-tools-heading"><div><span class="eyebrow">NETBOOK 3D</span><p id="netbook-status">Una netbook para observar de cerca</p></div><div class="netbook-buttons"><button id="explore-netbook" type="button">Explorar netbook <span aria-hidden="true">↗</span></button><button id="return-book" type="button" hidden>Volver al libro</button><button id="reset-netbook" type="button" hidden>Vista inicial</button><button id="explore-internal" type="button" aria-controls="internal-tools">Ver componentes</button></div></div>
+            <div id="netbook-adjustments" class="netbook-adjustments" hidden><label for="netbook-yaw">Giro <output id="yaw-value" for="netbook-yaw">−12°</output><input id="netbook-yaw" type="range" min="-35" max="35" value="-12" step="1" /></label><label for="netbook-tilt">Inclinación <output id="tilt-value" for="netbook-tilt">0°</output><input id="netbook-tilt" type="range" min="-8" max="8" value="0" step="1" /></label><label for="netbook-zoom">Acercamiento <output id="zoom-value" for="netbook-zoom">0%</output><input id="netbook-zoom" type="range" min="0" max="100" value="0" step="1" /></label><p>Usá las flechas con el lienzo enfocado para girar la netbook. Los límites mantienen una vista segura.</p></div>
+          </section>
+          <section id="internal-tools" class="internal-tools" aria-labelledby="internal-title" hidden>
+            <header class="internal-heading"><div><span class="eyebrow">EXPLORACIÓN INTERNA</span><h2 id="internal-title">Cuatro piezas, distintas funciones.</h2></div><div class="internal-navigation"><button id="internal-overview" type="button">Vista general</button><button id="return-exterior" type="button">Volver a la netbook</button><button id="internal-return-book" type="button">Volver al libro</button></div></header>
+            <p id="internal-notice" class="schematic-notice"></p>
+            <div class="component-layout"><div><h3 class="component-list-title">Elegí un componente</h3><div id="component-list" class="component-list" role="group" aria-label="Selección alternativa de componentes"></div><p class="component-keyboard-hint">Tab recorre la lista. Enter o Espacio selecciona. En el lienzo, usá 1–4 o las flechas.</p></div><div><div id="component-empty" class="component-empty"><span aria-hidden="true">↖</span><h3>Empezá por observar.</h3><p>Elegí una pieza en el esquema o en la lista. Vas a encontrar su función, precauciones y una pregunta abierta.</p></div><article id="component-detail" aria-labelledby="component-name" hidden><span class="eyebrow">COMPONENTE SELECCIONADO</span><h3 id="component-name"></h3><p id="component-function"></p><h4>Precauciones de manipulación</h4><p id="handling-notice"></p><ul id="component-precautions"></ul><div class="inquiry"><h4>Para investigar y conversar</h4><p id="component-question"></p></div></article></div></div>
+            
+          </section>
+          <section id="book-reading" class="book-reading" aria-label="Lectura de las páginas del libro abierto" hidden><article><span class="eyebrow">PÁGINA 01 · INTRODUCCIÓN</span><h3>Observar primero.</h3><p id="book-introduction"></p><p id="book-reminder" class="reading-reminder"></p></article><article><span class="eyebrow">PÁGINA 02 · EXPLORACIÓN</span><h3>La netbook, desde afuera</h3><p id="book-reserved"></p><span class="reserved-tag">Observación del exterior · Etapa 2</span></article></section>
+          <div class="toolbar" role="group" aria-label="Controles de la cámara"><div class="camera-controls"><button id="reset-view" type="button" title="Restablecer vista (Inicio)"><span aria-hidden="true">↺</span> Restablecer vista</button><span class="divider"></span><button id="zoom-in" class="square" type="button" aria-label="Acercar cámara" title="Acercar (+)">+</button><button id="zoom-out" class="square" type="button" aria-label="Alejar cámara" title="Alejar (−)">−</button></div><label class="grid-control"><input id="show-grid" type="checkbox" /> Mostrar grilla</label></div>
+          <div class="workspace-bottom"><p id="scene-instructions"><span aria-hidden="true">↔</span> Arrastrá para girar · Rueda para acercar · Teclado en el lienzo: flechas, A para abrir, C para cerrar</p><span id="view-status" class="view-status" role="status">Preparando entorno…</span></div>
+        </section>
+      </div>
+      <section class="bottom-strip" aria-label="Preferencias y propósito"><div class="purpose"><span aria-hidden="true">◎</span><p><strong>Observar antes de intervenir.</strong><br />Mantenimiento preventivo y diagnóstico de netbooks.</p></div><label class="performance-control"><input id="low-performance" type="checkbox" /><span class="switch" aria-hidden="true"></span><span>Modo de bajo consumo<small>Menor resolución y sin sombras</small></span></label></section>
+      </div>
+      <section id="safety-chapter" class="safety-chapter" role="tabpanel" aria-labelledby="tab-safety" hidden>
+        <header class="safety-heading"><div><span class="eyebrow">CAPÍTULO 04 · SEGURIDAD Y MANTENIMIENTO</span><h2>Antes de abrir una netbook</h2><p>Una netbook necesita revisión. Tu primera tarea es decidir cómo prepararte de forma segura.</p></div><button id="safety-return" type="button">Volver a la exploración 3D</button></header>
+        <p id="real-work-notice" class="real-work-notice"></p>
+        <div id="maintenance-types" class="maintenance-types" aria-label="Tres alcances de trabajo"></div>
+        <div class="safety-settings"><div role="group" aria-label="Modo del recorrido"><button id="safety-mode-practice" type="button" aria-pressed="true">Resolver la situación</button><button id="safety-mode-observe" type="button" aria-pressed="false">Observar sin responder</button></div><label for="safety-scenario">Caso de estudio<select id="safety-scenario"></select></label></div>
+        <p id="safety-observer-notice" class="observer-notice" hidden>Modo observación: recorrés ejemplos sin manipular ni responder. No se acreditan condiciones de seguridad.</p>
+        <p id="safety-observer-risk" class="observer-notice" hidden>En este caso con señales de riesgo se detendría la práctica. Los pasos restantes se muestran solo como referencia para otro caso sin esas señales.</p>
+        <div class="safety-progress-heading"><p id="safety-step-count"></p><progress id="safety-progress" max="7" value="1" aria-label="Posición en el recorrido"></progress></div>
+        <ol id="safety-steps" class="safety-steps" aria-label="Secuencia de preparación"></ol>
+        <div class="safety-layout"><section class="safety-decision" aria-labelledby="safety-step-title"><div class="safety-case"><span class="eyebrow">SITUACIÓN SIMULADA</span><h3 id="safety-case-label"></h3><p id="safety-case-description"></p></div><h3 id="safety-step-title" tabindex="-1"></h3><p id="safety-instruction"></p><div id="safety-answers" class="safety-answers" role="group" aria-label="Decisiones para este paso"></div><fieldset id="safety-confirmations" hidden><legend>Confirmaciones del caso simulado</legend><p>Marcar estas opciones representa una comprobación en el caso de práctica; no confirma el estado de un equipo real.</p><div id="safety-confirmation-inputs"></div></fieldset><section id="safety-feedback" class="safety-feedback" role="status" hidden><h4 id="safety-feedback-title"></h4><p id="safety-feedback-text"></p></section><p id="safety-gate" class="safety-gate"></p><section id="safety-completion" class="safety-completion" aria-label="Cierre del recorrido" hidden><h4>Preparación revisada en la simulación</h4><p>El siguiente trabajo real se acuerda con el docente y sigue el procedimiento del modelo exacto. Aquí no se abre el equipo ni se indica retirar piezas.</p></section><section id="safety-observation-end" class="observer-notice" hidden><h4>Fin de la observación</h4><p>Viste los siete pasos. No se validó ninguna condición de un equipo. Podés iniciar la práctica con «Resolver la situación».</p></section><nav class="safety-navigation" aria-label="Navegación del recorrido"><button id="safety-previous" type="button">Paso anterior</button><button id="safety-next" type="button">Siguiente paso</button><button id="safety-restart" type="button">Reiniciar caso</button></nav></section><aside class="safety-checks" aria-labelledby="safety-checks-title"><span class="eyebrow">ANTES DE CONTINUAR</span><h3 id="safety-checks-title">Condiciones previas</h3><p id="safety-checklist-caption"></p><ul id="safety-checklist"></ul><p>Si una condición falta o no puede verificarse, detené la práctica y consultá al docente.</p></aside></div>
+        <p id="safety-announcement" class="visually-hidden" role="status"></p>
+      </section>
+      <section id="diagnostic-chapter" class="diagnostic-chapter" role="tabpanel" aria-labelledby="tab-diagnostic" hidden>
+        <header class="diagnostic-heading"><div><span class="eyebrow">CAPÍTULO 05 · DESAFÍO DE DIAGNÓSTICO</span><h2>Detectives del Hardware</h2><p>Una pista no es una conclusión. Contrastá, explicá y proponé cómo seguir investigando.</p></div><div><button id="diag-return-safety" type="button">Volver a seguridad</button><button id="diag-return-exploration" type="button">Volver a la exploración 3D</button></div></header>
+        <p id="diag-simulation-notice" class="diagnostic-simulation-notice"></p>
+        <p id="diag-save-status" class="diagnostic-save-status" role="status"></p>
+        <ol id="diag-steps" class="diagnostic-steps" aria-label="Recorrido del desafío"></ol>
+        <div class="diagnostic-stage"><div class="diagnostic-stage-top"><span id="diag-count" class="eyebrow"></span><progress id="diag-progress" max="7" value="1" aria-label="Posición en el desafío"></progress></div><h3 id="diag-title" tabindex="-1"></h3><div id="diag-body"></div><p id="diag-requirement" class="diagnostic-requirement"></p><nav class="diagnostic-navigation" aria-label="Navegación del desafío"><button id="diag-previous" type="button">Paso anterior</button><button id="diag-next" type="button">Siguiente paso</button><button id="diag-reset" type="button">Reiniciar este caso guardado</button></nav><p class="diagnostic-reset-note">Reiniciar borra el borrador y el resultado de este caso en este navegador. Cambiar de capítulo conserva el recorrido.</p></div>
+        
+      </section>
+    </main>
+    <footer class="site-footer"><span>HARDWARE 3D <span aria-hidden="true">/</span> Un laboratorio para aprender.</span></footer>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <div class="dialog-heading"><span class="eyebrow">GUÍA DE USO</span><button id="close-help" type="button" aria-label="Cerrar guía">×</button></div>
+      <h2 id="help-title">Tomá el control de la mesa.</h2>
+      <p>Abrí el libro y esperá el despliegue de la netbook sobre la página derecha. La introducción aparece también debajo de la escena.</p>
+      <ul>
+        <li><strong>Índice y RAM:</strong> elegí Memoria RAM en el índice, incluso con el libro cerrado. La guía está en la página izquierda; la memoria emerge de la derecha. Elegí un número para acercarte a la memoria y «Ver libro completo» para recuperar ambas páginas. Girá con el deslizador o las flechas; 1–6 selecciona las partes y también hay botones HTML. «Leer la etiqueta» lleva al ejemplo escrito. La reflexión se conserva al cambiar de capítulo durante esta sesión, pero no al recargar.</li>
+        <li><strong>Detectives del Hardware:</strong> elegí una hipótesis, pedí información, observá resultados simulados y relacioná las evidencias antes de proponer una acción. El borrador y el resumen se guardan en este navegador cuando el almacenamiento local está disponible. No se ejecutan pruebas reales ni reemplazos de piezas.</li>
+        <li><strong>Seguridad y mantenimiento:</strong> abrí el capítulo desde las pestañas. Elegí resolver el caso u observar los siete pasos. La práctica exige comprobar cada condición antes de avanzar; el modo observación no valida la preparación. Usá Tab, Enter y Espacio. En las pestañas, las flechas cambian de capítulo.</li>
+        <li><strong>Libro:</strong> usá Abrir libro o Cerrar libro. Podés cambiar de dirección durante el movimiento.</li>
+        <li><strong>Netbook:</strong> Explorá con «Explorar netbook». Los deslizadores limitan el giro, la inclinación y el acercamiento. «Vista inicial» restablece el objeto y la cámara; «Volver al libro» recupera el encuadre general. Al cerrar, la netbook se repliega antes que las hojas.</li>
+        <li><strong>Vista interna:</strong> «Ver componentes» muestra un esquema didáctico. Seleccioná una pieza con un clic o con los botones de la lista. Con el lienzo enfocado, 1–4 y las flechas seleccionan; Escape o Inicio recuperan la vista general. Los botones permiten volver al exterior o al libro. La disposición real varía según el modelo.</li>
+        <li><strong>Mouse o pantalla táctil:</strong> en la vista del libro, arrastrá para girar y usá la rueda o dos dedos para acercar y alejar. En la exploración, usá los deslizadores para girar la netbook y la rueda o el deslizador para zoom.</li>
+        <li><strong>Teclado:</strong> con Tab, enfocá el lienzo. A abre y C cierra. Las flechas giran, + y − cambian la distancia e Inicio restablece la vista del estado actual.</li>
+        <li><strong>Controles:</strong> Tab recorre los botones. Enter o Espacio los activa. Escape cierra esta guía.</li>
+        <li><strong>Bajo consumo:</strong> limita la resolución y desactiva las sombras. El bucle de animación se detiene cuando el libro llega a su destino.</li>
+      </ul>
+      <p>La preferencia de movimiento reducido del sistema evita las animaciones del libro, de la netbook y del recorrido de cámara. También podés activar «Sin animación» en cualquier momento.</p>
+    </dialog>
+    </div>
+    <noscript>Para entrar al laboratorio interactivo, activá JavaScript en tu navegador.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

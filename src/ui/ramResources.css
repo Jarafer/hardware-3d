@@ -1,0 +1,22 @@
+.ram-resources { padding: 24px; border-top: 1px solid #b9a079; background: #f8efdc; }
+.ram-resources h3 { font: 28px Georgia, serif; margin: 10px 0; }.ram-resources h4 { font-size: 17px; }
+.ram-resource-menu, .ram-media-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0; }
+.ram-resource-menu a, .ram-media-actions a { padding: 10px 13px; border: 1px solid #356675; border-radius: 3px; text-decoration: none; background: #fff9ea; color: #303945; font-size: 13px; min-height: 42px; }
+.ram-resource-panel { border: 1px solid #b9a079; border-radius: 3px; background: #fff9ea; margin: 15px 0; padding: 0 18px 16px; }
+.ram-resource-panel > summary { cursor: pointer; font-size: 17px; font-weight: 650; padding: 17px 0; }
+.ram-resource-panel:not([open]) { padding-bottom: 0; }
+.ram-resource-panel figure { margin: 16px 0; }.ram-resource-panel figcaption, .ram-resource-caption { color: #535c4e; font-size: 13px; line-height: 1.8; }
+#ram-resource-image { display: block; width: 100%; height: auto; border: 1px solid #b9a079; }
+.ram-media-note { border-left: 3px solid #b08039; padding: 12px 15px; background: #d49b4610; }
+.ram-media-note p { margin: 0; }.ram-media-note li + li { margin-top: 10px; }
+#ram-video-host iframe { display: block; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; background: #303945; }
+#ram-pdf-host iframe { display: block; width: 100%; height: min(70vh, 700px); min-height: 350px; border: 1px solid #b9a079; }
+.ram-text-alternative { padding: 12px 16px; border-left: 3px solid #356675; background: #eaf0e5; margin: 18px 0; }
+.ram-text-alternative summary { cursor: pointer; font-weight: 650; }
+.ram-text-alternative h4 { margin-bottom: 7px; }.ram-text-alternative p { margin-top: 0; }
+.ram-image-dialog { width: min(1200px, 96vw); max-width: 96vw; padding: 18px; color: #303945; background: #f8efdc; border: 1px solid #7c785e; border-radius: 5px; }
+.ram-image-dialog::backdrop { background: #303945b0; }.ram-image-dialog h3 { font: 23px Georgia, serif; margin-top: 4px; }
+.ram-image-dialog button { min-height: 42px; padding: 9px 12px; color: #303945; border: 1px solid #356675; background: #fff9ea; border-radius: 3px; cursor: pointer; }
+.ram-image-dialog .ram-image-scroll { overflow: auto; max-height: 65vh; border: 1px solid #b9a079; }
+#ram-image-full { display: block; max-width: none; height: auto; }
+@media (max-width: 600px) { .ram-resources { padding: 17px; }.ram-resource-panel { padding-inline: 12px; }.ram-resource-menu a, .ram-media-actions a { max-width: 100%; overflow-wrap: anywhere; } }

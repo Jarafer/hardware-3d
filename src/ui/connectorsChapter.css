@@ -1,0 +1,84 @@
+.connectors-chapter .connectors-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 14px;
+}
+
+.connectors-chapter .connectors-controls [aria-pressed="true"] {
+  color: #fff9ea;
+  background: #315f6d;
+}
+
+.connectors-figure {
+  margin: 0;
+}
+
+.connectors-photo {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #a88c62;
+  background: #fff;
+}
+
+.connectors-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.connectors-marker {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid #173a48;
+  border-radius: 5px;
+  outline: 2px solid #fff;
+  background: #80cde32b;
+  pointer-events: none;
+}
+
+.connectors-figure figcaption {
+  padding: 12px;
+  background: #fff9ea;
+  border: solid #b9a079;
+  border-width: 0 1px 1px;
+}
+
+.connectors-figure figcaption p {
+  margin: 4px 0 0;
+}
+
+.connectors-reflection {
+  display: block;
+  margin-block: 16px 6px;
+}
+
+.connectors-reflection strong {
+  display: block;
+}
+
+#connectors-justification {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #a88c62;
+  background: #fff9ea;
+  color: inherit;
+  font: inherit;
+  resize: vertical;
+}
+
+.connectors-guide {
+  padding: 24px clamp(18px, 3vw, 38px);
+  border-top: 1px solid #c6a477;
+}
+
+.connectors-guide h3 {
+  margin: 0 0 12px;
+  font: 27px Georgia, serif;
+}
+
+.connectors-guide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,18 @@
+.storage-device-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.storage-device-controls button[aria-pressed="true"] { color: #fff9ea; background: #356675; }
+.storage-device-controls button[aria-pressed="true"]:hover { background: #28525f; }
+.storage-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.storage-device { margin: 0; border: 1px solid #b9a079; background: #fff9ea; }
+.storage-device img { display: block; width: 100%; height: clamp(185px, 30vw, 330px); object-fit: contain; background: white; }
+.storage-device figcaption { padding: 12px 14px; border-top: 1px solid #b9a079; }
+.storage-device figcaption p { margin: 5px 0 0; }
+.storage-case { margin-bottom: 18px; padding: 12px 14px; border-left: 3px solid #356675; background: #fff9ea; }
+.storage-case h4, .storage-case p { margin: 0; }
+.storage-case p { margin-top: 4px; }
+.storage-reflection { display: block; margin-top: 20px; }
+.storage-reflection strong { display: block; }
+#storage-justification { display: block; width: 100%; margin-top: 8px; padding: 10px; font: inherit; color: inherit; border: 1px solid #7c785e; border-radius: 3px; background: #fff9ea; resize: vertical; }
+#storage-guide-image { display: block; width: 100%; height: auto; border: 1px solid #b9a079; }
+#storage-guide-full { display: block; max-width: none; height: auto; }
+#storage-guide-zoom { max-width: 100%; accent-color: #356675; }
+#storage-video-host iframe { display: block; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border: 0; background: #303945; }

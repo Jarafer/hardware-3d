@@ -1,0 +1,131 @@
+.motherboard-chapter {
+  margin-bottom: 42px;
+  background: #faf1df;
+  border: 1px solid #b9a079;
+  box-shadow: 0 5px 0 #c6a47755, 0 6px 0 #b9a079;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.motherboard-chapter:not([hidden]) ~ .bottom-strip { display: none; }
+.motherboard-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(18px, 3vw, 38px);
+  border-bottom: 1px solid #c6a477;
+}
+.motherboard-heading h2 { margin: 5px 0 0; font: clamp(30px, 4vw, 42px) Georgia, serif; }
+.motherboard-spread { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr); }
+.motherboard-page { min-width: 0; padding: clamp(18px, 3vw, 38px); }
+.motherboard-page + .motherboard-page {
+  background: linear-gradient(90deg, #d9c7a470, transparent 18px), #f6ebd4;
+  border-left: 1px solid #c6a477;
+}
+.motherboard-page h3 { margin: 7px 0 15px; font: 27px Georgia, serif; }
+.motherboard-page h4 { margin: 20px 0 4px; }
+.motherboard-page p { margin: 8px 0 14px; }
+.motherboard-viewport {
+  position: relative;
+  border: 1px solid #a88c62;
+  background:
+    radial-gradient(ellipse at 50% 45%, #fff9edb0, transparent 70%),
+    linear-gradient(#a88c6220 1px, transparent 1px),
+    linear-gradient(90deg, #a88c6220 1px, transparent 1px),
+    #eee0c4;
+  background-size: auto, 24px 24px, 24px 24px, auto;
+}
+.motherboard-viewport:has(canvas[hidden]) { display: none; }
+.motherboard-viewport canvas { display: block; width: 100%; height: clamp(275px, 36vw, 425px); cursor: grab; }
+.motherboard-viewport canvas:active { cursor: grabbing; }
+.motherboard-face {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 9px;
+  border: 1px solid #b9a079;
+  border-radius: 3px;
+  background: #fff9ed;
+  font-size: 12px;
+  pointer-events: none;
+}
+.motherboard-hint, .motherboard-status { color: #505957; font-size: 13px; }
+.motherboard-controls {
+  min-inline-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 8px 0 0;
+  border: 0;
+}
+.motherboard-controls legend { padding: 0; font-weight: 650; }
+.motherboard-chapter button {
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #356675;
+  border-radius: 3px;
+  background: #fff9ea;
+  font: inherit;
+}
+.motherboard-chapter button[data-view="front"], .motherboard-chapter button[data-view="rear"] {
+  background: #356675;
+  color: #fff9ea;
+}
+.motherboard-chapter button[data-view="front"]:hover, .motherboard-chapter button[data-view="rear"]:hover { background: #28525f; }
+.motherboard-chapter summary { cursor: pointer; }
+.motherboard-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.motherboard-photos figure { margin: 0; }
+.motherboard-photos img { display: block; width: 100%; height: auto; border: 1px solid #b9a079; }
+.motherboard-photos figcaption { color: #505957; font-size: 12px; }
+.motherboard-functions { margin: 16px 0; }
+.motherboard-functions dt { margin-top: 12px; font-weight: 700; }
+.motherboard-functions dd { margin: 0; }
+.motherboard-note { margin: 18px 0; padding: 9px 12px; border-left: 3px solid #b08039; background: #fff9ea; }
+.motherboard-note h4 { margin: 0; }
+.motherboard-note p { margin-bottom: 0; }
+.motherboard-sources { border-top: 1px solid #c6a477; padding-top: 10px; font-size: 13px; }
+.motherboard-assessment {
+  padding: 24px clamp(18px, 3vw, 38px) 32px;
+  border-top: 1px solid #c6a477;
+  background: #f6ebd4;
+}
+.motherboard-assessment h3 { margin: 7px 0 12px; font: 27px Georgia, serif; }
+.motherboard-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.motherboard-questions fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #b9a079;
+  background: #fff9ea;
+}
+.motherboard-questions legend { padding: 0 4px; font-weight: 650; }
+.motherboard-questions label { display: flex; align-items: flex-start; gap: 9px; padding: 7px 0; cursor: pointer; }
+.motherboard-questions input { flex: none; margin: 5px 0 0; accent-color: #356675; }
+.motherboard-feedback, .motherboard-result { margin: 12px 0 0; padding: 9px 12px; border-left: 3px solid #356675; background: #eaf0e5; }
+.motherboard-feedback[data-result="review"] { border-color: #b08039; background: #f6ebd4; }
+.motherboard-assessment-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.motherboard-chapter .motherboard-check { color: #fff9ea; background: #356675; }
+.motherboard-chapter .motherboard-check:hover { background: #28525f; }
+@media (max-width: 760px) {
+  .motherboard-spread { grid-template-columns: minmax(0, 1fr); }
+  .motherboard-questions { grid-template-columns: minmax(0, 1fr); }
+  .motherboard-page + .motherboard-page { border-left: 0; border-top: 1px solid #c6a477; background: #f6ebd4; }
+}
+@media (max-width: 420px) {
+  .motherboard-photos { grid-template-columns: minmax(0, 1fr); }
+}
+
+.bibliography-intro {
+  margin: 18px clamp(18px, 3vw, 38px) 0;
+}
+
+.bibliography-chapter ul {
+  margin: 12px clamp(18px, 3vw, 38px) 28px;
+  padding-inline-start: 1.3em;
+}
+
+.bibliography-chapter li {
+  margin-block: 6px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "hardware-3d-laboratorio-interactivo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --configLoader native --host 127.0.0.1",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview --configLoader native --host 127.0.0.1",
+    "check": "node scripts/check.mjs && node --test scripts/book.test.mjs scripts/netbook.test.mjs scripts/components.test.mjs scripts/safety.test.mjs scripts/diagnostic.test.mjs scripts/audit.test.mjs scripts/ram.test.mjs scripts/ramResources.test.mjs"
+  },
+  "dependencies": { "three": "^0.180.0" },
+  "devDependencies": { "vite": "^7.1.0" },
+  "engines": { "node": ">=22.12.0" }
+}

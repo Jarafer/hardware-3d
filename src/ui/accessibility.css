@@ -1,0 +1,34 @@
+/* Ajustes de la auditoría: la paleta decorativa se mantiene; tinta más oscura para texto. */
+:focus-visible { outline-color: #303945; }
+.safety-checks [data-confirmed='true'] > span:first-child { color: #356650; }
+.chapter-tabs button span { color: #465751; font-size: 12px; }
+.learning li span { color: #535c4e; }
+main p, main li { font-size: 14px; line-height: 1.8; }
+main label, main button, main select, main summary { font-size: 13px; }
+main button { min-height: 40px; }
+main small, .eyebrow, .notebook-heading .eyebrow { font-size: 11px; }
+.workspace-header h2, .learning h3, .component-list-title { font-size: 14px; }
+.workspace-bottom, .workspace-bottom p, .view-status, .performance-control, .grid-control { font-size: 12px; }
+.stage-note p, .learning > p, .performance-control small, .component-keyboard-hint, .diagnostic-reset-note, .safety-checks > p { font-size: 12px; }
+#handling-notice { font-size: 13px !important; }
+.safety-steps strong, .diagnostic-steps strong { font-size: 12px; }
+.safety-steps small, .safety-checks small { font-size: 11px; color: #535c4e; }
+.internal-heading .eyebrow, #component-detail > .eyebrow, .safety-step-number, .diagnostic-steps span, .component-empty > span { color: #356675; }
+#toggle-book, #explore-netbook, #safety-mode-practice[aria-pressed='true'], #safety-mode-observe[aria-pressed='true'], #safety-next:not(:disabled), #diag-next:not(:disabled) { background-color: #356675; color: #fff9e9; border-color: #356675; }
+#toggle-book:hover:not(:disabled), #explore-netbook:hover:not(:disabled), #safety-next:hover:not(:disabled), #diag-next:hover:not(:disabled) { background-color: #284f5a; }
+.component-markers .selected { background-color: #356675; }
+.scene-coordinate { font-size: 10px; }
+.site-footer { font-size: 10px; line-height: 1.8; }
+.internal-navigation button, .netbook-buttons button, .camera-controls button { font-size: 12px; }
+.camera-controls .square { min-width: 40px; width: 40px; }
+.book-actions, .toolbar, .workspace-bottom, .safety-progress-heading { flex-wrap: wrap; }
+.diagnostic-field textarea { font-size: 15px; }
+@media (max-width: 720px) {
+  .site-header, main, .site-footer { width: calc(100% - 24px); }
+  .internal-banner { max-width: calc(100% - 24px); }
+  .internal-banner span { font-size: 10px; }
+  .chapter-tabs button { flex-basis: 140px; font-size: 13px; }
+  .chapter-tabs button span { font-size: 11px; }
+  .safety-chapter, .diagnostic-chapter { padding-inline: 12px; }
+  .safety-steps button, .diagnostic-steps button { padding: 10px; }
+}

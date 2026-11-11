@@ -1,0 +1,15 @@
+HARDWARE 3D | TALLER DE HARDWARE 5° AÑO
+Edición sin conexión
+
+1. Extraé el ZIP completo en una carpeta.
+2. En Windows, abrí «Abrir libro.exe».
+3. Dejá abierta la ventana del servidor mientras uses el libro.
+4. Para salir, cerrá la ventana del servidor.
+
+Si el navegador no se abre solo, copiá la dirección que muestra la ventana.
+La escena, los capítulos, las actividades, las imágenes y los PDF son locales.
+Los videos de YouTube y los enlaces externos requieren Internet.
+
+En macOS o Linux, si ya tenés Python 3, abrí una terminal en esta carpeta y ejecutá:
+  python3 -m http.server 4185 --bind 127.0.0.1 --directory libro
+Después entrá a http://127.0.0.1:4185/ desde el navegador.
